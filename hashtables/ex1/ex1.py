@@ -9,7 +9,7 @@ def get_indices_of_item_weights(weights, length, limit):
         weights_dict[weight] = limit - weight
 
     for weight in weights:
-        if limit - weight in weights_dict:
+        if weights_dict.get(limit - weight) is not None:
             first_index = weights.index(weight)
             second_index = weights.index(limit - weight, first_index + 1)
             if second_index > first_index:
