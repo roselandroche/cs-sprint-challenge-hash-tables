@@ -5,6 +5,18 @@ def intersection(arrays):
     # Your code here
     result = []
     count_dict = {}
+    array_count = 0
+
+    while array_count < len(arrays):
+        for i in range(len(arrays[array_count])):
+            if i in count_dict:
+                count_dict[i] += 1
+            else:
+                count_dict[i] = 1  
+        array_count += 1
+
+
+    print(count_dict) 
 
     return result
 
